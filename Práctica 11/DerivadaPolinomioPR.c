@@ -9,10 +9,6 @@ typedef double tipo_polinomio[MAX];
 extern void PROBAR (double polinomio[], double derivado[], int grado);
 
 void leerPolinomio(double p[], int *n); 
-void leerPolinomio(double p[], int *n){
-
-}
-
 void derivarPolinomio(double p[], int *n, double dp[]);
 void escribirPolinomio(double p[], int n);
 
