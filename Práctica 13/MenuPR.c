@@ -78,23 +78,45 @@ void hola_mundo(void)
     saludo("Hola Mundo");
 }
 
+
 void tirada_dados(void)
+
 {
+    int tirada_actual;
     int contador_ganadoras = 0;
-    int dado1, dado2, suma
 
-    for(int i = 0; i < 50; i++){
-        dado1 = rand() % 6 + 1;
-        dado2 = rand() % 6 + 1;
-        suma = dado1 + dado2;
+    do{
 
-        if(suma == 7 || suma == 11){
-            contador_ganadoras++;
+        printf("Ingrese el valor de la tirada de 3 dados (de 3 a 18): ");
+
+        scanf("%d", &tirada_actual);
+
+    } while (tirada_actual < 3 || tirada_actual > 18);
+
+    for (int dado1 = 1; dado1 <= 6; dado1++){
+
+        for (int dado2 = 1; dado2 <= 6; dado2++){
+
+            for (int dado3 = 1; dado3 <= 6; dado3++){
+
+                int suma_tirada = dado1 + dado2 + dado3;
+
+                if (suma_tirada > tirada_actual){
+
+                    contador_ganadoras++;
+
+                }
+
+            }
+
         }
+
     }
- 
-    printf("Numero de tiradas ganadoras: %d\n", contador_ganadoras);
-    PRINT_TEST("%d ", contador_ganadoras);
+
+  printf("Numero de tiradas ganadoras: %d\n", contador_ganadoras);
+
+  PRINT_TEST("%d ", contador_ganadoras);
+
 }
 
 void fibonacci(void)
@@ -103,8 +125,8 @@ void fibonacci(void)
     int actual = 1;
     int termino = 1;
 
-    //printf("%10d ", termino);
-    //PRINT_TEST("%10d ", termino);
+    printf("%10d ", termino);
+    PRINT_TEST("%10d ", termino);
 
     while (INT_MAX - termino >= anterior)
     {
