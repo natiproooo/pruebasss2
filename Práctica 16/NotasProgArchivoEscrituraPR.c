@@ -11,6 +11,8 @@
 
 int main()
 {
+    INICIO_TEST();
+
     float hito1, hito2, examen, autoeval, nota;
     char nombre[50];
     char c; // Para limpiar el buffer
@@ -53,6 +55,13 @@ int main()
     fclose(entrada);
     fclose(salida);
 
+    
     printf("\nProceso terminado. Se calcularon %d notas.\n", num_al);
+    
+    if (argc > 1){
+        PROBAR();
+        PRINT_TEST("PROBAR");
+    }  
+    FIN_TEST();
     return 0;
 }
